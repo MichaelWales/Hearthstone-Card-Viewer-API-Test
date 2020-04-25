@@ -1,6 +1,6 @@
 <template lang="html">
   <div>
-    <li v-on:click="onClick">{{ card.name }}</li>
+    <li v-on:click="onClick">{{card.name}}</li>
   </div>
 </template>
 

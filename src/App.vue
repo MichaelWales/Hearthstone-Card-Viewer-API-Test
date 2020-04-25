@@ -21,7 +21,7 @@ export default {
     }
   },
   mounted() {
-    fetch("https://omgvamp-hearthstone-v1.p.rapidapi.com/cards", {
+    fetch("https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/classes/Mage", {
 	    method: 'GET',
 	    headers: {
 		    'x-rapidapi-host': 'omgvamp-hearthstone-v1.p.rapidapi.com',

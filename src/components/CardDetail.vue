@@ -1,17 +1,18 @@
 <template lang="html">
   <div>
     <h2>{{card.name}}</h2>
-    <img width="200px" :src="getImageURL">
-
+    <img width="200px" :src="getImageURL" onerror="this.src = 'https://thumbs.gfycat.com/ImaginativeCluelessCoqui-size_restricted.gif'">
     <br>
 
     <i v-if="card.flavor">"{{card.flavor}}"</i>
 
     <h3>Class:</h3>
-      <p>{{card.playerClass}}</p>
+      <p v-if="card.playerClass">{{card.playerClass}}</p>
+      <p v-else>None</p>
 
     <h3>Card Set:</h3>
-      <p>{{card.cardSet}}</p>
+    <p v-if="card.cardSet">{{card.cardSet}}</p>
+    <p v-else>N/A</p>
 
     <h3>Card Rarity:</h3>
       <p v-if="card.rarity">{{card.rarity}}</p>
@@ -45,6 +46,7 @@
 </template>
 
 <script>
+import {eventBus} from '../main.js';
 
 export default {
   name: 'card-detail',

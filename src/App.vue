@@ -1,7 +1,13 @@
 <template lang="html">
   <div>
-    <h1>Hearthstone Deck Builder</h1>
+    <h1>Hearthstone Card Browser</h1>
+
+    <form v-on:submit.prevent>
+      <input type="text" v-model="search" placeholder="search for card..." v-on:keyup="searchForCard">
+    </form>
+
     <card-list :cards="cards"></card-list>
+
     <card-detail v-if="selectedCard" :card="selectedCard"></card-detail>
   </div>
 </template>
@@ -17,7 +23,8 @@ export default {
   data() {
     return {
       cards: [],
-      selectedCard: null
+      selectedCard: {},
+      search: ""
     }
   },
   mounted() {
@@ -39,6 +46,16 @@ export default {
     'card-list': CardList,
     'card-list-item': CardListItem,
     'card-detail': CardDetail
+  },
+  methods: {
+    searchForCard(){
+      let foundCard = this.cards.find((card) => {
+        return card.name.toLowerCase().indexOf(this.search.toLowerCase()) > -1
+      })
+      this.selectedCard = foundCard
+
+      eventBus.$emit('card-selected', this.selectedCard)
+    }
   }
 }
 </script>

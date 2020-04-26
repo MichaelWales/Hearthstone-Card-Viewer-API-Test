@@ -3,7 +3,6 @@
     <h2>{{card.name}}</h2>
     <img width="200px" :src="getImageURL" onerror="this.src = 'https://thumbs.gfycat.com/ImaginativeCluelessCoqui-size_restricted.gif'">
     <br>
-
     <i v-if="card.flavor">"{{card.flavor}}"</i>
 
     <h3>Class:</h3>
@@ -63,8 +62,24 @@ export default {
 
 <style lang="css" scoped>
 
-h1, h2, h3, p, i {
-  font-family: 'Almendra SC', serif;
-}
+  h2 {
+    font-family: 'Almendra SC', serif;
+    font-weight: 900;
+    font-size: 32px;
+  }
+
+  h3 {
+    font-family: 'Almendra SC', serif;
+    font-weight: 900;
+    font-size: 24px;
+
+  }
+
+  p, i {
+    font-family: 'Acme', sans-serif;
+    font-weight: 200;
+    font-size: 18px;
+  }
+
 
 </style>

@@ -20,8 +20,5 @@ export default {
 
 <style lang="css" scoped>
 
-h1, h2, h3, p, i {
-  font-family: 'Almendra SC', serif;
-}
 
 </style>

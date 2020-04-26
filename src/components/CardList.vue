@@ -1,7 +1,7 @@
 <template lang="html">
   <div>
     <ul>
-      <card-list-item v-for="(card, index) in cards" :card="card" :key="index"></card-list-item>
+      <card-list-item id="list" v-for="(card, index) in cards" :card="card" :key="index"></card-list-item>
     </ul>
   </div>
 </template>
@@ -19,4 +19,14 @@ export default {
 </script>
 
 <style lang="css" scoped>
+
+  h1, h2, h3, p, i {
+    font-family: 'Almendra SC', serif;
+  }
+
+  #list {
+    font-family: 'Almendra SC', serif;
+    list-style-type: circle;
+   }
+
 </style>

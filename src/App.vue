@@ -1,5 +1,5 @@
 <template lang="html">
-  <div>
+  <div id="app">
     <h1>Hearthstone Card Browser</h1>
 
     <form v-on:submit.prevent>
@@ -60,5 +60,19 @@ export default {
 }
 </script>
 
+
 <style lang="css" scoped>
+
+  #app {
+    max-width: 1000px;
+    padding: 20px;
+    border-style: ridge;
+    border-width: 10px;
+    background-color: burlywood;
+  }
+
+  h1, h2, h3, p, i {
+    font-family: 'Almendra SC', serif;
+  }
+
 </style>

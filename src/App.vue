@@ -32,7 +32,7 @@ export default {
 	    method: 'GET',
 	    headers: {
 		    'x-rapidapi-host': 'omgvamp-hearthstone-v1.p.rapidapi.com',
-		    'x-rapidapi-key': 'f69f28a03fmsh66ff563f5751cbdp1e1d75jsn810cdca72e97'
+		    'x-rapidapi-key': process.env.VUE_APP_API_KEY
 	    }
     })
     .then(response => response.json())
